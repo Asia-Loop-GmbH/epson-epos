@@ -1,0 +1,25 @@
+{
+  "name": "@asialoop/epson-epos",
+  "version": "1.0.1",
+  "description": "Wrapper for EPSON ePOS SDK",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsup src/index.ts --dts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Asia-Loop-GmbH/epson-epos.git"
+  },
+  "author": "Nam Truong Le",
+  "license": "SEE LICENSE IN LICENSE",
+  "bugs": {
+    "url": "https://github.com/Asia-Loop-GmbH/epson-epos/issues"
+  },
+  "homepage": "https://github.com/Asia-Loop-GmbH/epson-epos#readme",
+  "devDependencies": {
+    "@tsconfig/recommended": "^1.0.2",
+    "tsup": "^6.7.0",
+    "typescript": "^5.0.4"
+  }
+}
