@@ -1,6 +1,6 @@
 {
   "name": "@asialoop/epson-epos",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Wrapper for EPSON ePOS SDK",
   "main": "dist/index.js",
   "scripts": {
