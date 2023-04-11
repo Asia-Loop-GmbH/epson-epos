@@ -1,6 +1,6 @@
 {
   "name": "@asialoop/epson-epos",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Wrapper for EPSON ePOS SDK",
   "main": "dist/index.js",
   "scripts": {
@@ -18,8 +18,8 @@
   },
   "homepage": "https://github.com/Asia-Loop-GmbH/epson-epos#readme",
   "devDependencies": {
-    "@tsconfig/recommended": "^1.0.2",
-    "tsup": "^6.7.0",
-    "typescript": "^5.0.4"
+    "@tsconfig/recommended": "1.0.2",
+    "tsup": "6.7.0",
+    "typescript": "5.0.4"
   }
 }
