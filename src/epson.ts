@@ -1,7 +1,7 @@
 export interface EpsonDevice {
   DEVICE_TYPE_PRINTER: string;
-  connect(ip: string, port: number, cb: (data: any) => void): void;
-  createDevice(name: string, type: string, opts: any, cb: (devobj: EpsonBuilder, retcode: any) => void): void;
+  connect(ip: string, port: number, cb: (result: string) => void): void;
+  createDevice(name: string, type: string, opts: any, cb: (devobj: EpsonBuilder, retcode: string) => void): void;
 }
 
 export interface EpsonBuilder {
