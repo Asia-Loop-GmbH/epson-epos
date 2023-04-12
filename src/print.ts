@@ -13,16 +13,17 @@ declare const epson: any;
 
 export interface PrintOptions {
   ip: string;
-  port: number;
+  https: boolean;
 
   execute(builder: EpsonBuilder): void
 }
 
 export function print(opts: PrintOptions) {
   const ePosDev: EpsonDevice = new epson.ePOSDevice();
-  ePosDev.connect(opts.ip, opts.port, cbConnect);
+  const port = opts.https ? 8043 : 8008;
+  ePosDev.connect(opts.ip, port, cbConnect);
 
-  function cbConnect(data: any) {
+  function cbConnect(data: string) {
     if (data === 'OK') {
       console.log("EPSON connected")
       ePosDev.createDevice('local_printer', ePosDev.DEVICE_TYPE_PRINTER, {
@@ -35,7 +36,7 @@ export function print(opts: PrintOptions) {
     }
   }
 
-  function cbCreateDevice_printer(devobj: EpsonBuilder, retcode: any) {
+  function cbCreateDevice_printer(devobj: EpsonBuilder, retcode: string) {
     if (retcode === 'OK') {
       console.log("EPSON got device")
       opts.execute(devobj);
