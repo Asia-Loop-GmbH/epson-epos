@@ -23,8 +23,8 @@ export function print(opts: PrintOptions) {
   const port = opts.https ? 8043 : 8008;
   ePosDev.connect(opts.ip, port, cbConnect);
 
-  function cbConnect(data: string) {
-    if (data === 'OK') {
+  function cbConnect(result: string) {
+    if (result === 'OK' || result === 'SSL_CONNECT_OK') {
       console.log("EPSON connected")
       ePosDev.createDevice('local_printer', ePosDev.DEVICE_TYPE_PRINTER, {
         'crypto': true,
@@ -32,7 +32,7 @@ export function print(opts: PrintOptions) {
       }, cbCreateDevice_printer);
     } else {
       console.error("Failed to connect EPSON")
-      console.log(data);
+      console.log(result);
     }
   }
 
