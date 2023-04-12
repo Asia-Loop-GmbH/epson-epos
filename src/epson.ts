@@ -6,6 +6,7 @@ export interface EpsonDevice {
 
 export interface EpsonBuilder {
   FONT_A: string;
+  FONT_B: string;
   FONT_C: string;
   ALIGN_CENTER: string;
   ALIGN_RIGHT: string;
