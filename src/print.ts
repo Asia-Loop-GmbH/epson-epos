@@ -14,6 +14,8 @@ declare const epson: any;
 export interface PrintOptions {
   ip: string;
   https: boolean;
+  crypto: boolean;
+  buffer: boolean;
 
   execute(builder: EpsonBuilder): void
 }
@@ -27,8 +29,8 @@ export function print(opts: PrintOptions) {
     if (result === 'OK' || result === 'SSL_CONNECT_OK') {
       console.log("EPSON connected")
       ePosDev.createDevice('local_printer', ePosDev.DEVICE_TYPE_PRINTER, {
-        'crypto': true,
-        'buffer': true
+        'crypto': opts.crypto,
+        'buffer': opts.buffer
       }, cbCreateDevice_printer);
     } else {
       console.error("Failed to connect EPSON")
