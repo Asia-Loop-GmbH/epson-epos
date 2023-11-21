@@ -19,7 +19,7 @@
   "homepage": "https://github.com/Asia-Loop-GmbH/epson-epos#readme",
   "devDependencies": {
     "@tsconfig/recommended": "1.0.2",
-    "tsup": "6.7.0",
+    "tsup": "8.0.1",
     "typescript": "5.0.4"
   }
 }
